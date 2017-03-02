@@ -4,6 +4,7 @@
 .LSOverride
 
 /.idea/
+/.idea/*
 /tmp/
 /bin/
 *.test
