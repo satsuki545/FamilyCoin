@@ -1,0 +1,12 @@
+version: "2"
+services:
+
+  database:
+    image: mysql
+    environment:
+      - MYSQL_USER=family_coin
+      - MYSQL_PASSWORD=family_coin
+      - MYSQL_DATABASE=family_coin
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - 3306:3306

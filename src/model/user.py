@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import dataset
+from config import config
 
+db = dataset.connect('mysql://' + config.production.address + 'root@127.0.0.1/information_schema')
 
-class User(object):
-    def __init__(self, id, name, display_name):
-        self.id = id
-        self.name = name
-        self.display_name = display_name
-
-    def getResult(self):
-        return [self.id, self.name, self.display_name]
+table = db['user']
+results = table.find(CHARACTER_SET_NAME='utf8', order_by='-ID', _limit=3)
+for r in results:
+    print(r)
